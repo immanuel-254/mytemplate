@@ -1,0 +1,34 @@
+package main
+
+
+script withParameters(a string, b string, c int) {
+	console.log(a, b, c);
+}
+
+script withoutParameters() {
+	alert("hello");
+}
+
+templ Button(text string) {
+	<button onClick={ withParameters("test", text, 123) } onMouseover={ withoutParameters() } type="button">{ text }</button>
+}
+
+templ Home() {
+    @Button("Submit")
+}
+
+/*templ myhome() {
+
+<script>
+    function __templ_withParameters_ed1c(a, b, c){
+        console.log(a, b, c);
+    }
+    function __templ_withoutParameters_9551(){
+        alert("hello");
+    }
+</script>
+
+<button onClick="__templ_withParameters_ed1c(&#34;test&#34;,&#34;Submit&#34;,123)" onMouseover="__templ_withoutParameters_9551()" type="button">Submit</button>
+
+<button onClick="__templ_withParameters_ed1c(&#34;test&#34;,&#34;Submit&#34;,123)" onMouseover="__templ_withoutParameters_9551()" type="button">Submit</button>
+}*/
